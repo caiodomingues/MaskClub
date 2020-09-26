@@ -7,12 +7,13 @@ Made by [caiodomingues](https://github.com/caiodomingues) and [thobiasvicente](h
 # API DOCS
 
 ### AUTH
-- [x] 1. create : Criação de usuario: insomnia - Create - POST
-- [x] 2. login : Autenticação de usuario : insomnia - Login - POST
 
-### EVENTOS
-- [x] 3. index : Listagem de eventos: insomnia - Index - GET
-- [x] 4. show : Exibição de evento : insomnia - Show - GET
-- [x] 5. store : Criação de evento: insomnia - Create - POST
-- [x] 6. destroy : Deleção de evento : insomnia - Delete - DELETE
-- [x] 7. like/dislike : Like ou dislike de evento : insomnia - Like/Dislike - POST
+    - [x] 1. create : User creation: insomnia - Create - POST
+    - [x] 2. login : User authentication : insomnia - Login - POST
+
+### EVENTS
+    - [x] 3. index : User list: insomnia - Index - GET
+    - [x] 4. show : Event view : insomnia - Show - GET
+    - [x] 5. store : Event creation: insomnia - Create - POST
+    - [x] 6. destroy : Event deletion : insomnia - Delete - DELETE
+    - [x] 7. like/dislike : Event Like / dislike : insomnia - Like/Dislike - POST
