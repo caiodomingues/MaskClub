@@ -8,9 +8,9 @@ Made by [caiodomingues](https://github.com/caiodomingues) and [thobiasvicente](h
 
 You can find the documentation file [here.](https://github.com/caiodomingues/MaskClub/blob/master/docs/routes_api.json)
 
-### AUTH
-
 For a better understanding, the api documentation structure is like that:
+
+### AUTH
 
 - [x] 1. create: User creation: insomnia - Create - POST
 - [x] 2. login: User authentication: insomnia - Login - POST
