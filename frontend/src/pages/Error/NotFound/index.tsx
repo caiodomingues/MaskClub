@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Login: React.FC = () => {
+const NotFound: React.FC = () => {
   return (
     <Container>
-      <h1>Login</h1>
+      <h1>NotFound</h1>
     </Container>
   );
 };
 
-export default Login;
+export default NotFound;

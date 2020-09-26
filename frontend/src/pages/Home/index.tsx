@@ -1,87 +1,70 @@
 import React from "react";
+import { HiOutlineDownload, HiOutlineUserAdd } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 import {
-  Container,
-  BlueBar,
-  Content,
-  Logo,
-  SignImage,
-  LeadContainer,
-  LeadTitle,
-  LeadSubtitle,
-  HelpContainer,
-  HelpText,
-  HelpLink,
   ContentContainer,
-  Title,
   Description,
   CardContainer,
-  Card,
-  CardTitle,
-  CardText,
   CardIcon,
-  Icon,
   CardContent,
 } from "./styles";
 
-import SignIn from "../../assets/sign.svg";
-import MaskClub from "../../assets/logo.svg";
-
-import Login from "../../assets/login.svg";
-import Credential from "../../assets/credential.svg";
+import BlueBar from "../../components/BlueBar";
+import Content from "../../components/Content";
+import Container from "../../components/Container";
+import Card from "../../components/Card";
+import Lead from "../../components/Lead";
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <BlueBar>
-        <Logo src={MaskClub} />
-
-        <LeadContainer>
-          <LeadTitle>
-            A few clicks away from showing your event to the world.
-          </LeadTitle>
-          <LeadSubtitle>
+      <BlueBar test='32'>
+        <Lead>
+          <h1>A few clicks away from showing your event to the world.</h1>
+          <p>
             Share your event in minutes.
             <br />
             Save time and money.
-          </LeadSubtitle>
-        </LeadContainer>
-
-        <SignImage src={SignIn} />
+          </p>
+        </Lead>
       </BlueBar>
       <Content>
-        <HelpContainer>
-          <HelpText>Having troubles?</HelpText>
-          <HelpLink href="#"> Get Help</HelpLink>
-        </HelpContainer>
         <ContentContainer>
-          <Title>Let's make it happen.</Title>
+          <h1>Let's make it happen.</h1>
           <Description>
             Sharing your event in Brazil is just a few steps away. <br />
             Make login or register right now.
           </Description>
           <CardContainer>
-            <Card href="/login">
-              <CardIcon>
-                <Icon width="55px" src={Login} />
-              </CardIcon>
-              <CardContent>
-                <CardTitle>Login</CardTitle>
-                <CardText>
-                  Already own an account? So let's go back to work!
-                </CardText>
-              </CardContent>
+            <Card>
+              <Link className="clickable row" to="/login">
+                <CardIcon>
+                  <HiOutlineDownload
+                    size={56}
+                    style={{ transform: "rotate(-90deg)", opacity: 0.75 }}
+                  />
+                </CardIcon>
+                <CardContent>
+                  <h1>Login</h1>
+                  <p>Already own an account? So let's go back to work!</p>
+                </CardContent>
+              </Link>
             </Card>
-            <Card href="/register">
-              <CardIcon>
-                <Icon width="36px" src={Credential} />
-              </CardIcon>
-              <CardContent>
-                <CardTitle>Register</CardTitle>
-                <CardText>
-                  Doesn't have an account yet? You're few steps away from one ;)
-                </CardText>
-              </CardContent>
+
+            <Card>
+              <Link className="clickable row" to="/register">
+                <CardIcon>
+                  <HiOutlineUserAdd size={56} style={{ opacity: 0.75 }} />
+                </CardIcon>
+                <CardContent>
+                  <h1>Register</h1>
+                  <p>
+                    Doesn't have an account yet? You're few steps away from one
+                    ;)
+                  </p>
+                </CardContent>
+              </Link>
             </Card>
           </CardContainer>
         </ContentContainer>
