@@ -21,3 +21,7 @@ For a better understanding, the api documentation structure is like that:
 - [x] 5. store: Event creation: insomnia - Create - POST
 - [x] 6. destroy: Event deletion: insomnia - Delete - DELETE
 - [x] 7. like/dislike: Event Like / dislike: insomnia - Like/Dislike - POST
+
+## BACKEND
+
+For the correct use of the project, it is necessary to copy the `.env_example` file, with the name `.env` and configure the connection string of the MongoDB database.
