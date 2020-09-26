@@ -19,7 +19,7 @@ import Lead from "../../components/Lead";
 const Home: React.FC = () => {
   return (
     <Container>
-      <BlueBar test='32'>
+      <BlueBar>
         <Lead>
           <h1>A few clicks away from showing your event to the world.</h1>
           <p>
