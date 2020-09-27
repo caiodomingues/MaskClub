@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { HiArrowLeft, HiOutlineDownload } from "react-icons/hi";
 
-import { CardContainer, CardBottom, Button } from "./styles";
+import { CardContainer, CardBottom } from "./styles";
 
+import Button from "../../../components/Button";
 import BlueBar from "../../../components/BlueBar";
 import Content from "../../../components/Content";
 import Container from "../../../components/Container";
 import Card from "../../../components/Card";
-import Lead from "../../../components/Lead";
 import Input from "../../../components/Input";
+import Lead from "../../../components/Lead";
 
 const Login: React.FC = () => {
   return (

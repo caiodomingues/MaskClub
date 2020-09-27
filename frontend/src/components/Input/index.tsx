@@ -1,10 +1,7 @@
-import React, { InputHTMLAttributes } from "react";
+import React from "react";
+import { InputProps } from "../../types";
 
 import { Container } from "./styles";
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
-}
 
 const Input: React.FC<InputProps> = ({ ...rest }) => {
   return (
