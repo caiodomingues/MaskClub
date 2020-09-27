@@ -9,6 +9,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
+
+  .title {
+    position: absolute;
+    top: 50px;
+  }
 `;
 
 export const HelpContainer = styled.div`

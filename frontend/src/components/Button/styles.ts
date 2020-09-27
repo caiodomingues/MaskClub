@@ -13,7 +13,12 @@ export const Container = styled.button`
   margin-top: 16px;
   background-color: #fff;
 
-  & svg {
+  & p {
+    color: #1369ff;
+  }
+
+  & svg,
+  & p {
     opacity: 0.75;
   }
 
@@ -23,7 +28,8 @@ export const Container = styled.button`
     text-decoration: none;
     cursor: pointer;
 
-    & svg {
+    & svg,
+    & p {
       color: #fff;
       opacity: 1;
     }
