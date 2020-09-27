@@ -37,6 +37,10 @@ export const Container = styled.div`
     margin: -16px;
     padding: 16px;
 
+    & svg {
+      opacity: 0.75;
+    }
+
     &:hover {
       border: 2px solid #5492ff;
       background-color: #e1ebff;
@@ -49,8 +53,13 @@ export const Container = styled.div`
         border: 2px solid #5492ff;
       }
 
-      & div img {
+      & div img,
+      svg {
         color: #fff;
+      }
+
+      & svg {
+        opacity: 1;
       }
     }
   }

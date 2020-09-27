@@ -41,8 +41,8 @@ const Home: React.FC = () => {
               <Link className="clickable row" to="/login">
                 <CardIcon>
                   <HiOutlineDownload
-                    size={56}
-                    style={{ transform: "rotate(-90deg)", opacity: 0.75 }}
+                    size={42}
+                    style={{ transform: "rotate(-90deg)" }}
                   />
                 </CardIcon>
                 <CardContent>
@@ -55,7 +55,7 @@ const Home: React.FC = () => {
             <Card>
               <Link className="clickable row" to="/register">
                 <CardIcon>
-                  <HiOutlineUserAdd size={56} style={{ opacity: 0.75 }} />
+                  <HiOutlineUserAdd size={42} />
                 </CardIcon>
                 <CardContent>
                   <h1>Register</h1>

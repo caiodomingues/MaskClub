@@ -1,6 +1,11 @@
 import React, { InputHTMLAttributes, ButtonHTMLAttributes } from "react";
 
-export interface DivProps extends React.HTMLAttributes<HTMLDivElement> {}
+// Should we rename this file to index.d.ts?
+
+export interface DivProps extends React.HTMLAttributes<HTMLDivElement> {
+  compact?: boolean | string | undefined;
+  width?: number | string | undefined;
+}
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;

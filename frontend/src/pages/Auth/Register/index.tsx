@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { FormEvent } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { HiArrowLeft, HiOutlineDownload } from "react-icons/hi";
 
 import { CardContainer, CardBottom } from "./styles";
@@ -13,6 +13,14 @@ import Lead from "../../../components/Lead";
 import Input from "../../../components/Input";
 
 const Register: React.FC = () => {
+  const history = useHistory();
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    history.push("/events");
+  };
+
   return (
     <Container>
       <BlueBar>
@@ -32,45 +40,47 @@ const Register: React.FC = () => {
           </Link>
           <h1>Register</h1>
           <Card style={{ padding: 32 }}>
-            <label htmlFor="name">Name</label>
-            <Input type="text" id="name" name="name" placeholder="John Doe" />
-            <br />
-            <label htmlFor="email">E-mail Address</label>
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="your@email.com"
-            />
-            <br />
-            <label htmlFor="password">Password</label>
-            <Input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="********"
-            />
-            <br />
-            <label htmlFor="c_password">Confirm Password</label>
-            <Input
-              type="password"
-              id="c_password"
-              name="password"
-              placeholder="********"
-            />
-            <CardBottom>
-              <p>
-                By registering on MaskClub you agree to the{" "}
-                <a href="#">Terms of Service</a> and{" "}
-                <a href="#">Privacy Policy</a>.
-              </p>
-              <Button type="submit">
-                <HiOutlineDownload
-                  size={56}
-                  style={{ transform: "rotate(-90deg)", opacity: 0.75 }}
-                />
-              </Button>
-            </CardBottom>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="name">Name</label>
+              <Input type="text" id="name" name="name" placeholder="John Doe" />
+              <br />
+              <label htmlFor="email">E-mail Address</label>
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+              />
+              <br />
+              <label htmlFor="password">Password</label>
+              <Input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="********"
+              />
+              <br />
+              <label htmlFor="c_password">Confirm Password</label>
+              <Input
+                type="password"
+                id="c_password"
+                name="password"
+                placeholder="********"
+              />
+              <CardBottom>
+                <p>
+                  By registering on MaskClub you agree to the{" "}
+                  <a href="#">Terms of Service</a> and{" "}
+                  <a href="#">Privacy Policy</a>.
+                </p>
+                <Button type="submit">
+                  <HiOutlineDownload
+                    size={56}
+                    style={{ transform: "rotate(-90deg)" }}
+                  />
+                </Button>
+              </CardBottom>
+            </form>
           </Card>
         </CardContainer>
       </Content>

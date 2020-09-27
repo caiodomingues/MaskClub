@@ -6,7 +6,7 @@
 
 This page was made for a college project; It's **not** mobile-friendly (yet), sorry 😅.
 
-Made by [caiodomingues](https://github.com/caiodomingues) and [thobiasvicente](https://github.com/thobiasvicente)
+Note that the frontend only implements the UI, so there's none functionality done yet. You can navigate through the pages to see the results normally, for example, by clicking on the submit button of login forms to see the next page.
 
 ## Instructions
 
@@ -27,7 +27,19 @@ $ yarn dev
 
 ## Docs
 
-There's a basic code documentation made with JSDocs/TSDocs.
+Although the project was made with TypeScript, there's basic code documentation made with JSDocs/TSDocs:
+
+```tsx
+/**
+ * Save the user on browser's localStorage
+ * @param token A Bearer token
+ * @param user The user object
+ */
+async function saveUser(token: string, user: UserProps) {
+  localStorage.setItem("example_token", token);
+  localStorage.setItem("example_user", JSON.stringify(user));
+}
+```
 
 You can check the page design (please note that doesn't reflect the final result) on [this folder](https://github.com/caiodomingues/MaskClub/blob/master/docs/design/)
 
@@ -52,6 +64,8 @@ The core of the project is creating a simple application that handles an Event c
 - [x] 4. Show: Event view: insomnia - Show - GET
 - [x] 5. Store: Event creation: insomnia - Create - POST
 - [x] 6. Destroy: Event deletion: insomnia - Delete - DELETE
-- [x] 7. Like/Dislike: Event Like / dislike: insomnia - Like/Dislike - POST*
+- [x] 7. Like/Dislike: Event Like / dislike: insomnia - Like/Dislike - POST\*
 
-<sup>* This route is could be done using Socket.io to make information broadcast, but we've decided to not take this project so deep</sup>
+<sup>\* This route is could be done using Socket.io to make information broadcast, but we've decided to not take this project so deep</sup>
+
+Made by [caiodomingues](https://github.com/caiodomingues) and [thobiasvicente](https://github.com/thobiasvicente)

@@ -13,6 +13,26 @@ import {
 
 const AuthContext = createContext<Partial<AuthContextProps>>({});
 
+/**
+ * The AuthProvider, implements `login`, `logout`, `register`, `saveUser` and exports the signed, user and loading read-only values.
+ *
+ * @component
+ * @example
+ * return (
+ *   <AuthContext.Provider
+ *     value={{
+ *       signed,
+ *       loading,
+ *       user,
+ *       signIn,
+ *       signOut,
+ *       register,
+ *     }}
+ *   >
+ *     {children}
+ *   </AuthContext.Provider>
+ * );
+ */
 export function AuthProvider({ children }: any) {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState("");
@@ -36,17 +56,31 @@ export function AuthProvider({ children }: any) {
     loadStorageData();
   }, []);
 
+  /**
+   * Save the user on browser's localStorage
+   * @param {string} token A Bearer token
+   * @param {UserProps} user The user object
+   *
+   * You can retrieve user information by acessing the `user` value from `useAuth()`;
+   */
   async function saveUser(token: string, user: UserProps) {
     localStorage.setItem("maskclub_token", token);
     localStorage.setItem("maskclub_user", JSON.stringify(user));
   }
 
+  /**
+   * Login method, it will call `saveUser()` and set user signed in if the promise runs successfully
+   * @param {object} credentials Object that receives `email` and `password`.
+   *
+   * After setting user signed in, the Bearer token is setted as a default header for any api call
+   */
   async function signIn(credentials: LoginCredentials) {
     setLoading(true);
     await api
       .post("/login", credentials)
       .then(async (res) => {
-        await saveUser(res.data.data.token, res.data.user);
+        console.log(res);
+        // await saveUser(res.data.data.token, res.data.user);
         setSigned(true);
         setLoading(false);
       })
@@ -56,6 +90,9 @@ export function AuthProvider({ children }: any) {
       });
   }
 
+  /**
+   * This functions simply removes the Token and User from browser's localStorage
+   */
   async function signOut() {
     setLoading(true);
     localStorage.removeItem("maskclub_token");
@@ -64,12 +101,19 @@ export function AuthProvider({ children }: any) {
     setLoading(false);
   }
 
+  /**
+   * Register method, it will call `saveUser()` and set user signed in if the promise runs successfully
+   * @param {object} credentials Object that receives `name`, `email`, `password` and `c_password`
+   * You can retrieve user information by acessing the `user` value from `useAuth()`;
+   * After setting user signed in, the Bearer token is setted as a default header for any api call
+   */
   async function register(credentials: RegisterCredentials) {
     setLoading(true);
     await api
       .post("/register", credentials)
       .then(async (res) => {
-        await saveUser(res.data.token, res.data.user);
+        console.log(res);
+        // await saveUser(res.data.token, res.data.user);
         setSigned(true);
         setLoading(false);
       })
@@ -84,7 +128,6 @@ export function AuthProvider({ children }: any) {
       value={{
         signed,
         loading,
-        setLoading,
         user,
         signIn,
         signOut,
@@ -96,6 +139,10 @@ export function AuthProvider({ children }: any) {
   );
 }
 
+/**
+ * Used to consume the AuthContext
+ * @returns context
+ */
 export function useAuth() {
   const context = useContext(AuthContext);
 

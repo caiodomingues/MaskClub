@@ -13,10 +13,19 @@ export const Container = styled.button`
   margin-top: 16px;
   background-color: #fff;
 
+  & svg {
+    opacity: 0.75;
+  }
+
   &:hover {
     border: 2px solid #5492ff;
     background-color: #5492ff;
     text-decoration: none;
     cursor: pointer;
+
+    & svg {
+      color: #fff;
+      opacity: 1;
+    }
   }
 `;

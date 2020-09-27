@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: #1369ff;
   color: #fff;
-  width: 425px;
   padding: 20px;
   position: relative;
   display: flex;
@@ -13,7 +12,7 @@ export const Container = styled.div`
 
 export const Logo = styled.img`
   height: auto;
-  width: 200px;
+  width: ${(props) => props.width || 200};
   margin: 0 auto;
   position: absolute;
   top: 50px;

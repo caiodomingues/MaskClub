@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { FormEvent } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { HiArrowLeft, HiOutlineDownload } from "react-icons/hi";
 
 import { CardContainer, CardBottom } from "./styles";
@@ -13,6 +13,14 @@ import Input from "../../../components/Input";
 import Lead from "../../../components/Lead";
 
 const Login: React.FC = () => {
+  const history = useHistory();
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    history.push("/events");
+  };
+
   return (
     <Container>
       <BlueBar>
@@ -32,34 +40,36 @@ const Login: React.FC = () => {
           </Link>
           <h1>Login</h1>
           <Card style={{ padding: 32 }}>
-            <label htmlFor="email">E-mail Address</label>
-            <Input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="your@email.com"
-            />
-            <br />
-            <label htmlFor="password">Password</label>
-            <Input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="********"
-            />
-            <CardBottom>
-              <div className="column">
-                <Link to="/">Forgot your e-mail address?</Link>
-                <br />
-                <Link to="/">Forgot your password?</Link>
-              </div>
-              <Button type="submit">
-                <HiOutlineDownload
-                  size={56}
-                  style={{ transform: "rotate(-90deg)", opacity: 0.75 }}
-                />
-              </Button>
-            </CardBottom>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="email">E-mail Address</label>
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+              />
+              <br />
+              <label htmlFor="password">Password</label>
+              <Input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="********"
+              />
+              <CardBottom>
+                <div className="column">
+                  <Link to="/">Forgot your e-mail address?</Link>
+                  <br />
+                  <Link to="/">Forgot your password?</Link>
+                </div>
+                <Button type="submit">
+                  <HiOutlineDownload
+                    size={56}
+                    style={{ transform: "rotate(-90deg)" }}
+                  />
+                </Button>
+              </CardBottom>
+            </form>
           </Card>
         </CardContainer>
       </Content>
