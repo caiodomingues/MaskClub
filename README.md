@@ -1,7 +1,5 @@
-# MaskClub
-
 <p align="center">
-  <img src="https://github.com/caiodomingues/MaskClub/blob/master/frontend/src/assets/logo-inverse.svg">
+  <img height="auto" width="350" src="https://github.com/caiodomingues/MaskClub/blob/master/frontend/src/assets/logo-inverse.svg">
 </p>
 
 This page was made for a college project; It's **not** mobile-friendly (yet), sorry 😅.
