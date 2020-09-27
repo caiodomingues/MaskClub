@@ -30,6 +30,8 @@ module.exports = {
         description,
         fileName: file ? file.originalname : "NULL",
         filePath: file ? file.key : "NULL",
+        like: 0,
+        dislike: 0,
       });
       await events.save();
       return res.json(events);
