@@ -2,7 +2,7 @@
   <img height="auto" width="350" src="https://github.com/caiodomingues/MaskClub/blob/master/frontend/src/assets/logo-inverse.svg">
 </p>
 
-This page was made for a college project; It's **not** mobile-friendly (yet), sorry 😅.
+This page was made for a college project; It's **not** mobile-friendly neither responsive (yet), sorry 😅.
 
 Note that the frontend only implements the UI, so there's none functionality done yet. You can navigate through the pages to see the results normally, for example, by clicking on the submit button of login forms to see the next page.
 
