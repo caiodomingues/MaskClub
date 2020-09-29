@@ -17,15 +17,31 @@ export const CardContainer = styled.div`
     }
 
     & svg {
-      position: absolute;
-      right: 16px;
-      top: 16px;
       opacity: 0.5;
 
-      :hover {
-        opacity: 1;
-        color: #ff1333;
+      &:hover {
         cursor: pointer;
+        opacity: 1;
+      }
+
+      &.trash {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+      }
+
+      &.down,
+      &.up {
+        padding: 0 10px;
+      }
+
+      &.trash:hover,
+      &.down:hover {
+        color: #ff1333;
+      }
+
+      &.up:hover {
+        color: #1369ff;
       }
     }
   }

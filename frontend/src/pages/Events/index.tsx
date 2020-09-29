@@ -1,6 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { HiOutlineTrash } from "react-icons/hi";
+import {
+  HiOutlineTrash,
+  HiOutlineThumbDown,
+  HiOutlineThumbUp,
+} from "react-icons/hi";
 
 import { CardContainer } from "./styles";
 
@@ -35,7 +39,12 @@ const Events: React.FC = () => {
               impedit odio ad fugit, perspiciatis, eius id quos officia
               molestiae repudiandae accusamus ab voluptate.
             </p>
-            <HiOutlineTrash size={24} />
+            <br />
+            <span>
+              <HiOutlineThumbDown className="down" size={24} />
+              <HiOutlineThumbUp className="up" size={24} />
+            </span>
+            <HiOutlineTrash className="trash" size={24} />
           </Card>
           <Card>
             <h1>Teste</h1>
@@ -45,7 +54,12 @@ const Events: React.FC = () => {
               impedit odio ad fugit, perspiciatis, eius id quos officia
               molestiae repudiandae accusamus ab voluptate.
             </p>
-            <HiOutlineTrash size={24} />
+            <br />
+            <span>
+              <HiOutlineThumbDown className="down" size={24} />
+              <HiOutlineThumbUp className="up" size={24} />
+            </span>
+            <HiOutlineTrash className="trash" size={24} />
           </Card>
           <Card>
             <h1>Teste</h1>
@@ -55,7 +69,12 @@ const Events: React.FC = () => {
               impedit odio ad fugit, perspiciatis, eius id quos officia
               molestiae repudiandae accusamus ab voluptate.
             </p>
-            <HiOutlineTrash size={24} />
+            <br />
+            <span>
+              <HiOutlineThumbDown className="down" size={24} />
+              <HiOutlineThumbUp className="up" size={24} />
+            </span>
+            <HiOutlineTrash className="trash" size={24} />
           </Card>
         </CardContainer>
       </Content>
