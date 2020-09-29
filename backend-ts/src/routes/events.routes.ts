@@ -9,7 +9,12 @@ const eventsRouter = Router();
 eventsRouter.post("/", async (req, res) => {
   try {
     const { event_creator_id, name, address, description } = req.body;
-    const file = req.files ? [0] : req.file;
+    let file: any = {};
+    if (req.files) {
+      file = req.files;
+    } else {
+      file = req.file;
+    }
     const eventsController = new EventsController();
     const event = await eventsController.store({
       event_creator_id,
@@ -41,6 +46,7 @@ eventsRouter.get("/", async (req, res) => {
   try {
     const eventsRepository = getRepository(events);
     const event = await await eventsRepository.find();
+
     return res.status(200).json(event);
   } catch (error) {
     res.status(400).json({ error: error.message });
