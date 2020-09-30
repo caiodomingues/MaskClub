@@ -7,9 +7,9 @@ import Users from "../app/models/Users";
 const usersRouter = Router();
 
 usersRouter.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const { name, email, password } = req.body;
-
     const usersController = new UsersController();
 
     const user = await usersController.store({

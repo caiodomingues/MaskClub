@@ -32,6 +32,8 @@ class EventsController {
         dislikes: 0,
       });
 
+      console.log(filePath);
+
       await eventsRespository.save(events);
 
       return events;
