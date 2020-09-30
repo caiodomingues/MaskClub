@@ -61,9 +61,11 @@ The core of the project is creating a simple application that handles an Event c
 - [x] 3. Index: User list: insomnia - Index - GET
 - [x] 4. Show: Event view: insomnia - Show - GET
 - [x] 5. Store: Event creation: insomnia - Create - POST
-- [x] 6. Destroy: Event deletion: insomnia - Delete - DELETE
-- [x] 7. Like/Dislike: Event Like / dislike: insomnia - Like/Dislike - POST\*
+- [x] 6. Destroy*: Event deletion: insomnia - Delete - DELETE
+- [x] 7. Like/Dislike: Event Like / dislike: insomnia - Like/Dislike - POST\**
 
-<sup>\* This route is could be done using Socket.io to make information broadcast, but we've decided to not take this project so deep</sup>
+<sup>\* Deletion should work only for the user that have created the event</sup>
+
+<sup>\** This route is could be done using Socket.io to make information broadcast, but we've decided to not take this project so deep</sup>
 
 Made by [caiodomingues](https://github.com/caiodomingues) and [thobiasvicente](https://github.com/thobiasvicente)
